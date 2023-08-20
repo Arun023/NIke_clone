@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./../Button";
 import { arrowRight } from "../../assets/icons";
-import { statistics } from "../../constants/index";
+import { shoes, statistics } from "../../constants/index";
 import { bigShoe1 } from "../../assets/images";
+import ShoeCard from "../ShoeCard";
 const Hero = () => {
+  const [imageShoe, setimageShoe] = useState(bigShoe1);
   return (
     <section
       id="home"
@@ -14,7 +16,7 @@ const Hero = () => {
         </p>
         <h1 className="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
           <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
-            New Arrival
+            The New Arrival
           </span>
           <br />
           <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
@@ -35,14 +37,25 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
+      <div className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
         <img
-          src={bigShoe1}
-          alt='shoe colletion'
+          src={imageShoe}
+          alt="shoe colletion"
           width={610}
           height={502}
-          className='object-contain relative z-10'
+          className="object-contain relative z-10"
         />
+        <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
+          {shoes.map((shoe) => (
+            <div key={shoe.id}>
+              <ShoeCard
+                image={shoe}
+                changeShoeImage={(shoe) => setimageShoe(shoe)}
+                shoeImage={imageShoe}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

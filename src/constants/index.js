@@ -14,6 +14,10 @@ import {
   customer2,
   shoe4,
   shoe5,
+  BrownShoes,
+  SneakerShoes,
+  LeatherShoes,
+  PairShoes,
   shoe6,
   shoe7,
   thumbnailShoe1,
@@ -33,46 +37,74 @@ export const shoes = [
   {
     thumbnail: thumbnailShoe1,
     bigShoe: bigShoe1,
-    id:1
+    id: 1,
   },
   {
     thumbnail: thumbnailShoe2,
     bigShoe: bigShoe2,
-    id:2
+    id: 2,
   },
   {
     thumbnail: thumbnailShoe3,
     bigShoe: bigShoe3,
-    id:3
+    id: 3,
   },
 ];
 
 export const statistics = [
-  { value: "1k+", label: "Brands", id:1 },
-  { value: "500+", label: "Shops", id:2 },
-  { value: "250k+", label: "Customers", id:3 },
+  { value: 1000, label: "Brands", id: 1 },
+  { value: 500, label: "Shops", id: 2 },
+  { value: 2500, label: "Customers", id: 3 },
 ];
 
 export const products = [
   {
+    imgURL: BrownShoes,
+    name: "Nike Brown Jordan-01",
+    price: "$220.20",
+    rating: 4.3,
+  },
+  {
+    imgURL: LeatherShoes,
+    name: "Nike Leather Jordan-04",
+    price: "$190.20",
+    rating: 3,
+  },
+  {
+    imgURL: SneakerShoes,
+    name: "Nike Sneaker Jordan-09",
+    price: "$190.20",
+    rating: 5,
+  },
+  {
+    imgURL: PairShoes,
+    name: "Nike Pair Jordan-07",
+    price: "$190.20",
+    rating: 3.9,
+  },
+  {
     imgURL: shoe4,
     name: "Nike Air Jordan-01",
     price: "$200.20",
+    rating: 4.8,
   },
   {
     imgURL: shoe5,
     name: "Nike Air Jordan-10",
     price: "$210.20",
+    rating: 4,
   },
   {
     imgURL: shoe6,
     name: "Nike Air Jordan-100",
     price: "$220.20",
+    rating: 4.5,
   },
   {
     imgURL: shoe7,
     name: "Nike Air Jordan-001",
     price: "$230.20",
+    rating: 4.1,
   },
 ];
 
@@ -110,6 +142,48 @@ export const reviews = [
     feedback:
       "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
   },
+  {
+    imgURL: customer1,
+    customerName: "Morich Brown",
+    rating: 4.5,
+    feedback:
+      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+  },
+  {
+    imgURL: customer2,
+    customerName: "Lota Mongeskar",
+    rating: 4.5,
+    feedback:
+      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
+  },
+  {
+    imgURL: customer1,
+    customerName: "Morich Brown",
+    rating: 4.5,
+    feedback:
+      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+  },
+  {
+    imgURL: customer2,
+    customerName: "Lota Mongeskar",
+    rating: 4.5,
+    feedback:
+      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
+  },
+  {
+    imgURL: customer1,
+    customerName: "Morich Brown",
+    rating: 4.5,
+    feedback:
+      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+  },
+  {
+    imgURL: customer2,
+    customerName: "Lota Mongeskar",
+    rating: 4.5,
+    feedback:
+      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
+  }
 ];
 
 export const footerLinks = [

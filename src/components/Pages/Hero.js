@@ -4,6 +4,7 @@ import { arrowRight } from "../../assets/icons";
 import { shoes, statistics } from "../../constants/index";
 import { bigShoe1 } from "../../assets/images";
 import ShoeCard from "../ShoeCard";
+import Timer from "../Timer";
 const Hero = () => {
   const [imageShoe, setimageShoe] = useState(bigShoe1);
   return (
@@ -29,7 +30,9 @@ const Hero = () => {
         <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
           {statistics.map((res) => (
             <div key={res.id}>
-              <p className="text-4xl font-palanquin font-bold">{res.value}</p>
+              <div className="text-4xl font-palanquin font-bold flex">
+                <Timer Limit={res.value} /> +
+              </div>
               <p className="leading-7 font-montserrat text-slate-gray">
                 {res.label}
               </p>

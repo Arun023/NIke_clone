@@ -3,18 +3,16 @@ import { reviews } from "../../constants";
 import ReviewCard from "../ReviewCard";
 const CustomerReview = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const autoplayDelay = 2000; // Delay in milliseconds between slides
+  const autoplayDelay = 2000;
   const [autoplayInterval, setAutoplayInterval] = useState(null);
 
   useEffect(() => {
-    // Start autoplay when component mounts
     const interval = setInterval(() => {
       const nextIndex = (currentTestimonial + 1) % reviews.length;
       setCurrentTestimonial(nextIndex);
     }, autoplayDelay);
     setAutoplayInterval(interval);
 
-    // Clean up when component unmounts
     return () => {
       clearInterval(autoplayInterval);
     };
@@ -40,18 +38,16 @@ const CustomerReview = () => {
           imgURL={reviews[currentTestimonial].imgURL}
         />
       </div>
-      <div className="flex-1 flex justify-evenly mt-24 items-center max-lg:flex-col gap-14">
+      <div className="flex-1 flex text-center justify-center mt-24 items-center max-lg:flex-col">
         {reviews.map((review, index) => {
           const isActive = index === currentTestimonial;
           return (
-            isActive && (
               <button
-                key={review.customerName}
+                key={review.id}
                 onClick={() => handleTestimonialClick(index)}
-                className={`mx-2 w-4 h-4 rounded-full ${
+                className={`mx-2 w-4 h-4 rounded-full block max-lg:hidden ${
                   isActive ? "bg-gray-800" : "bg-gray-300"
                 }`}></button>
-            )
           );
         })}
       </div>
